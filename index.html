@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap/js/bootstrap.bundle.min.js">
+    <title>Piedra Papel o Tijera</title>
+</head>
+<body>
+
+
+  <div style="text-align:center;">
+      <h1 class="Titulo">Piedra Papel o Tijera</h1>
+  </div>
+  <div style="text-align:center;">
+    <p>Seleccione una figura</p>
+  </div>
+ 
+  <div class="container overflow-hidden text-center">
+    <div class="row gx-5">
+      <div class="col">
+        <img src="./assets/images/Piedra.png" alt="Piedra" id="0.0">
+        <img src="./assets/images/Papel.png" alt="Papel" id="1.0">
+        <img src="./assets/images/Tijera.png" alt="Tijera" id="2.0">
+       <div class="p-3"><p id="jugador1"></p></div>
+      </div>
+      <div class="col">
+        <img src="./assets/images/Piedra.png" alt="Piedra" id="0">
+        <img src="./assets/images/Papel.png" alt="Papel" id="1">
+        <img src="./assets/images/Tijera.png" alt="Tijera" id="2">
+        <div class="p-3"> <p id="jugador2"></p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container overflow-hidden text-center">
+    <div class="row gx-5">
+      <div class="col">
+       <div class="p-3"><button id="boton1">Seleccionar Ficha</button></div>
+      </div>
+      <div class="col">
+        <div class="p-3"><button id="boton2">Seleccionar Ficha</button></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/juego.js"></script>
+</body>
+<html>
