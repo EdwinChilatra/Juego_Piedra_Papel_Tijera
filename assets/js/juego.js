@@ -2,13 +2,13 @@ const boton1 = document.getElementById("boton1");
 const boton2 = document.getElementById("boton2");
 const jugador1 = document.getElementById("jugador1");
 const jugador2 = document.getElementById("jugador2");
+const reset = document.getElementById("reset");
 let objeto1 = document.getElementById("0");
 let objeto2 = document.getElementById("1");
 let objeto3 = document.getElementById("2");
 let objeto4 = document.getElementById("0.0");
 let objeto5 = document.getElementById("1.0");
 let objeto6 = document.getElementById("2.0");
-let dado1 = 0;
 let dado2 = 0;
 
 objeto4.addEventListener("click", function() {
@@ -51,6 +51,18 @@ boton2.addEventListener("click", function() {
   }
 });
 
+reset.addEventListener("click",() =>{
+  objeto1.style.display = "inline";
+  objeto2.style.display = "inline";
+  objeto3.style.display = "inline";
+  objeto4.style.display = "inline";
+  objeto5.style.display = "inline";
+  objeto6.style.display = "inline";
+});
+
+resultado.addEventListener("", () => {
+
+});
 
 
 
