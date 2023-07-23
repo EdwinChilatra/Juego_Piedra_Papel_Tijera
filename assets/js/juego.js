@@ -4,7 +4,6 @@ let objeto3 = document.getElementById("2");
 let objeto4 = document.getElementById("0.0");
 let objeto5 = document.getElementById("1.0");
 let objeto6 = document.getElementById("2.0");
-let dado2 = 0;
 
 objeto4.addEventListener("click", function() {
     objeto4.style.display = "inline";
@@ -29,23 +28,37 @@ objeto6.addEventListener("click", function() {
 
 
 function seleccionComputador() {
-  dado2 = Math.floor(Math.random() * 3);
-  if (dado2 === 0 ) {
+  lanzamiento = Math.floor(Math.random() * 3);
+  if (lanzamiento === 0 ) {
     objeto1.style.display = "inline";
     objeto2.style.display = "none";
     objeto3.style.display = "none";
   }
-  else if (dado2 === 1) {
+  else if (lanzamiento === 1) {
     objeto1.style.display = "none";
     objeto2.style.display = "inline";
     objeto3.style.display = "none";
   }
-  else if (dado2 === 2) {
+  else if (lanzamiento === 2) {
     objeto1.style.display = "none";
     objeto2.style.display = "none";
     objeto3.style.display = "inline";
   }
 };
+
+resultado.addEventListener("click", (seleccionComputador) =>{
+  if(objeto1 === objeto3 || objeto2 === objeto4 || objeto3 === objeto6){
+    alert("EMPATE");
+  }
+  else if(objeto1 === objeto6 || objeto2 === objeto4 || objeto3 === objeto5 ){
+    alert("GANA COMPUTADOR");
+  }
+  else{
+    alert("Gana Jugador")    
+  }
+
+});
+
 
 reset.addEventListener("click",() =>{
   objeto1.style.display = "inline";
