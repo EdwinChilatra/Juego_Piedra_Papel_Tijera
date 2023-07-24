@@ -1,21 +1,30 @@
+// Computador
 let objeto1 = document.getElementById("0");
 let objeto2 = document.getElementById("1");
 let objeto3 = document.getElementById("2");
-let objeto4 = document.getElementById("0.0");
-let objeto5 = document.getElementById("1.0");
-let objeto6 = document.getElementById("2.0");
+// Jugador
+let objeto4 = document.getElementById("Piedra");
+let objeto5 = document.getElementById("Papel");
+let objeto6 = document.getElementById("Tijera");
+
+let humano = null;
+let computador = null;
+
 
 objeto4.addEventListener("click", function() {
-    objeto4.style.display = "inline";
-    objeto5.style.display = "none";
-    objeto6.style.display = "none";
-    seleccionComputador();
+    
+  objeto4.style.display = "inline";
+  objeto5.style.display = "none";
+  objeto6.style.display = "none";
+  humano = Piedra;
+  seleccionComputador();
 });
 
 objeto5.addEventListener("click", function() {
   objeto4.style.display = "none";
   objeto5.style.display = "inline";
   objeto6.style.display = "none";
+  humano = Papel;
   seleccionComputador();
 });
 
@@ -23,40 +32,42 @@ objeto6.addEventListener("click", function() {
   objeto4.style.display = "none";
   objeto5.style.display = "none";
   objeto6.style.display = "inline";
+  humano = Tijera;
   seleccionComputador();
 });
 
-
 function seleccionComputador() {
-  lanzamiento = Math.floor(Math.random() * 3);
-  if (lanzamiento === 0 ) {
+  lanzamiento2 = Math.floor(Math.random() * 3);
+  if (lanzamiento2 === 0 ) {
     objeto1.style.display = "inline";
     objeto2.style.display = "none";
     objeto3.style.display = "none";
+    computador = Piedra;
   }
-  else if (lanzamiento === 1) {
+  else if (lanzamiento2 === 1) {
     objeto1.style.display = "none";
     objeto2.style.display = "inline";
     objeto3.style.display = "none";
+    computador = Papel;
   }
-  else if (lanzamiento === 2) {
+  else if (lanzamiento2 === 2) {
     objeto1.style.display = "none";
     objeto2.style.display = "none";
     objeto3.style.display = "inline";
+    computador = Tijera;
   }
 };
 
-resultado.addEventListener("click", (seleccionComputador) =>{
-  if(objeto1 === objeto3 || objeto2 === objeto4 || objeto3 === objeto6){
+resultado.addEventListener("click", () =>{
+  if(humano == computador){
     alert("EMPATE");
   }
-  else if(objeto1 === objeto6 || objeto2 === objeto4 || objeto3 === objeto5 ){
-    alert("GANA COMPUTADOR");
+  else if(humano == Piedra && computador == Tijera || humano == Papel && computador == Piedra || humano == Tijera && computador == Papel ){
+    alert("Gana Humano");
   }
-  else{
-    alert("Gana Jugador")    
+  else {
+    alert("Gana Computador");
   }
-
 });
 
 
